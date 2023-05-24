@@ -14,23 +14,7 @@ const express_1 = require("express");
 const Comment_repo_1 = require("../repositories/Comment.repo");
 const Post_repo_1 = require("../repositories/Post.repo");
 exports.CommentRouter = (0, express_1.Router)();
-// CommentRouter.post("/:postId",async (req:Request, res:Response) => {
-//     const params = req.params;
-//     const foundPost = await readPost(Number(params.postId));
-//     if(!foundPost){
-//         return res.sendStatus(404)
-//     }
-//     try {
-//         const {text, userId, postId} = req.body as IComment;
-//         const newComment = await createComment({
-//             text, userId, postId
-//         })
-//         return res.send(newComment);
-//     } catch (error) {
-//         console.error(error)
-//     }
-// })
-exports.CommentRouter.post("/:postId", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+exports.CommentRouter.post("/:postId/comments", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const params = req.params;
     const foundPost = yield (0, Post_repo_1.readPost)(Number(params.postId));
     if (!foundPost) {

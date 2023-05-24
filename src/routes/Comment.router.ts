@@ -5,26 +5,7 @@ import { readPost } from "../repositories/Post.repo";
 
 export const CommentRouter = Router();
 
-// CommentRouter.post("/:postId",async (req:Request, res:Response) => {
-//     const params = req.params;
-//     const foundPost = await readPost(Number(params.postId));
-
-//     if(!foundPost){
-//         return res.sendStatus(404)
-//     }
-//     try {
-//         const {text, userId, postId} = req.body as IComment;
-//         const newComment = await createComment({
-//             text, userId, postId
-//         })
-//         return res.send(newComment);
-        
-//     } catch (error) {
-//         console.error(error)
-//     }
-// })
-
-CommentRouter.post("/:postId", async (req: Request, res: Response) => {
+CommentRouter.post("/:postId/comments", async (req: Request, res: Response) => {
     const params = req.params;
     const foundPost = await readPost(Number(params.postId));
 
