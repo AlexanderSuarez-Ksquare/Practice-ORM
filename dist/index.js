@@ -13,17 +13,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 const app_1 = __importDefault(require("./app"));
 const db_1 = require("./db");
-const PORT = 5000;
-dotenv_1.default.config();
+const PORT = process.env.PORT;
 const URI_CONN = process.env.URI_CONN;
 app_1.default.listen(PORT, () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         if (URI_CONN) {
             const sequelize = (0, db_1.startDB)(URI_CONN);
             yield sequelize.authenticate();
-            // await sequelize.sync({force:true})
             yield sequelize.sync({ force: true });
             console.log(`App is listening at port ${PORT}`);
         }
