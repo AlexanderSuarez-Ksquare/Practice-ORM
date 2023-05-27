@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"tsc -w\" \"nodemon -q dist/index.js \" ",
-    "start" : "node dist/index.js",
-    "build" : "rm -rf dist && tsc"
+    "start": "node dist/index.js",
+    "build": "rm -rf dist && tsc"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +23,7 @@
     "@types/node": "^20.2.1",
     "concurrently": "^8.0.1",
     "nodemon": "^2.0.22",
+    "sequelize-cli": "^6.6.0",
     "typescript": "^5.0.4"
   }
 }

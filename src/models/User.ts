@@ -18,7 +18,7 @@ export const setUpUser = (sequelize : Sequelize) =>{
         },
         name : DataTypes.STRING,
         userName: DataTypes.STRING
-    },{sequelize, modelName:"User"});
+    },{sequelize, modelName:"User"})
 }
 
 export default User;
